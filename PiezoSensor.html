@@ -28,6 +28,38 @@
             </ul>
         </section>
 
+        <div id="codeDocumentation">
+            <h2>Code Documentation</h2>
+            <h3>Functions:</h3>
+            <ul>
+                <li><strong>setup():</strong> Initializes the sensors and LCD display. Sets the initial message on the LCD.</li>
+                <li><strong>loop():</strong> Continuously checks the sensor readings and updates the LCD and Serial Monitor with the drone detection status.</li>
+            </ul>
+    
+            <h3>Classes:</h3>
+            <ul>
+                <li><strong>LiquidCrystal_I2C:</strong> Used for communicating with the LCD. Requires the I2C address of the LCD, number of columns, and number of rows.</li>
+            </ul>
+    
+            <h3>Variables:</h3>
+            <ul>
+                <li><strong>piezoSensorPin1, piezoSensorPin2, piezoSensorPin3, piezoSensorPin4:</strong> int pins connected to Piezo sensors.</li>
+                <li><strong>piezoThreshold:</strong> int value above which piezo is considered "triggered".</li>
+                <li><strong>lcd:</strong> LiquidCrystal_I2C object for the LCD display.</li>
+            </ul>
+    
+            <h3>Constants:</h3>
+            <ul>
+                <li>Sensor pins (piezoSensorPin1, piezoSensorPin2, piezoSensorPin3, piezoSensorPin4) are assigned to specific board pins and are not meant to change throughout the program.</li>
+                <li>piezoThreshold is set based on sensitivity requirements and may be adjusted for different environments or sensors.</li>
+            </ul>
+    
+            <h3>External Libraries:</h3>
+            <ul>
+                <li><strong>LiquidCrystal_I2C:</strong> Handles the interfacing with the LCD display over the I2C communication protocol.</li>
+            </ul>
+        </div>
+
         <!-- Additional sections can be added here -->
     </main>
 </body>

@@ -26,6 +26,40 @@
             </ul>
         </section>
 
+        <div id="codeDocumentation">
+
+            <h2>Code Overview</h2>
+            <p>This script is designed to measure voltage using a simple voltage divider connected to an analog input and display the measured voltage on both an LCD and Serial Monitor.</p>
+            
+            <h2>Functions:</h2>
+            <ul>
+                <li><strong>setup():</strong> Initializes the LCD display and sets up the Serial communication. Displays the initial message on the LCD.</li>
+                <li><strong>loop():</strong> Continuously reads the voltage from the voltage detector pin, calculates the actual voltage, and updates the LCD and Serial Monitor with the current voltage reading every second.</li>
+            </ul>
+            
+            <h2>Variables:</h2>
+            <ul>
+                <li><strong>volDetPin:</strong> Analog pin connected to the voltage divider (A0).</li>
+                <li><strong>vin:</strong> Actual input voltage being measured.</li>
+                <li><strong>vout:</strong> Voltage coming out from the voltage divider.</li>
+                <li><strong>voltageDetVal:</strong> Raw analog value read from the voltage detector pin.</li>
+                <li><strong>shldredfactor:</strong> Factor to adjust the measured value to the actual voltage (due to voltage divider).</li>
+                <li><strong>vcc:</strong> Reference voltage for the Arduino board (usually 5V).</li>
+                <li><strong>lcd:</strong> LiquidCrystal_I2C object for interfacing with the LCD.</li>
+            </ul>
+            
+            <h2>Constants:</h2>
+            <ul>
+                <li><strong>volDetPin:</strong> Pin number for the voltage detector.</li>
+                <li><strong>shldredfactor:</strong> Shield reduction factor, specific to the voltage divider used.</li>
+                <li><strong>vcc:</strong> Reference voltage for the Arduino (5V).</li>
+            </ul>
+            
+            <h2>External Libraries:</h2>
+            <ul>
+                <li><strong>LiquidCrystal_I2C.h:</strong> Library for controlling the LCD via I2C.</li>
+            </ul></div>
+
         <!-- Additional sections can be added here -->
     </main>
 </body>

@@ -76,52 +76,54 @@
             y_test_inv = scaler_y.inverse_transform(y_test)</code>        
         <section id="load-data">
             <h2>Load Data</h2>
-            <p>Loads battery health data from a CSV file using the <code>pd.read_csv()</code> function. Specify the path to the CSV file in the <code>file_path</code> variable.</p>
+            <p>The code loads battery health data from a CSV file using pd.read_csv() function. The path to the CSV file should be specified in the file_path variable.</p>
         </section>
 
         <section id="preprocessing">
             <h2>Preprocessing</h2>
-            <p>Define input features (X) and target variable (y) from the loaded data. Normalize the data using Min-Max scaling to ensure features are in the range [0, 1].</p>
+            <p>The input features (X) and target variable (y) are defined from the loaded data. In this case, the input feature is 'Capacity (Ah)' and the target variable is 'SOH'.
+
+                The data is then normalized using Min-Max scaling to ensure that all the features are in the range [0, 1].</p>
         </section>
 
         <section id="train-test-split">
             <h2>Train-Test Split</h2>
-            <p>Split data into training and testing sets using the <code>train_test_split()</code> function. Set the test size to 20% and random state to 42.</p>
+            <p>The data is split into training and testing sets using train_test_split() function from sklearn. The testing set size is set to 20% of the total data, and the random state is set to 42.</p>
         </section>
 
         <section id="reshape-data">
             <h2>Reshape Data</h2>
-            <p>Reshape data to fit the LSTM model's input shape: (samples, time steps, features). Time steps are typically set to 1.</p>
+            <p>The training and testing data is reshaped to match the input shape required by the LSTM model. The new shape is (samples, time steps, features), where time steps is set to 1 and features is the number of input features.</p>
         </section>
 
         <section id="build-lstm-model">
             <h2>Build LSTM Model</h2>
-            <p>Construct an LSTM model with 50 units followed by a Dense layer with 1 unit. Set the output layer's activation function to 'linear'.</p>
+            <p>The LSTM model is built using Sequential() from tensorflow.keras.models. The model consists of an LSTM layer with 50 units, followed by a Dense layer with 1 unit. The activation function for the output layer is set to 'linear' for regression.</p>
         </section>
 
         <section id="compile-model">
             <h2>Compile Model</h2>
-            <p>Compile the model using 'adam' as the optimizer and 'mean_squared_error' as the loss function.</p>
+            <p>The model is compiled using model.compile() function. The optimizer is set to 'adam' and the loss function is set to 'mean_squared_error', which is commonly used for regression tasks.</p>
         </section>
 
         <section id="train-model">
             <h2>Train Model</h2>
-            <p>Train the model with specified epochs and batch size, using the training data and also provide the validation data.</p>
+            <p>The model is trained using model.fit(). The training data (X_train and y_train) is passed to the function along with the number of epochs (50) and batch size (32). The validation data (X_test and y_test) is also passed for monitoring the model's performance during training.</p>
         </section>
 
         <section id="evaluate-model">
             <h2>Evaluate Model</h2>
-            <p>Evaluate the model's performance using the testing data and store the loss value.</p>
+            <p>EThe trained model is evaluated using model.evaluate() function. The testing data (X_test and y_test) is passed to the function, and the mean squared error (MSE) loss is computed and stored in the variable loss. The loss value represents the model's performance on unseen data.</p>
         </section>
 
         <section id="make-predictions">
             <h2>Make Predictions</h2>
-            <p>Use the model to make predictions on the testing data and store the results.</p>
+            <p>The model is used to make predictions on the testing data using model.predict(). The predictions are stored in the variable predictions.</p>
         </section>
 
         <section id="inverse-transform">
             <h2>Inverse Transform</h2>
-            <p>Inverse transform the predictions and actual values to convert them back to the original scale.</p>
+            <p>The predictions and actual values (y_test) are inverse transformed using scaler_y.inverse_transform() to convert them back to the original scale.</p>
         </section>
 
         <section id="plot-results">

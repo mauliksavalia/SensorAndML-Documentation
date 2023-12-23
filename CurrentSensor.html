@@ -26,6 +26,45 @@
             </ul>
         </section>
 
+        <div id="codeDocumentation">
+
+            <h2>Code Overview</h2>
+            <p>This script is designed to measure and display voltage, current, and power metrics using the INA219 sensor. The data is shown both on an LCD and the Serial Monitor.</p>
+            
+            <h2>Functions:</h2>
+            <ul>
+                <li><strong>setup():</strong> Initializes the I2C connection, LCD display, and INA219 sensor. Begins measuring initial voltage.</li>
+                <li><strong>loop():</strong> Continuously gathers data from the INA219 sensor every 2 seconds and updates the displays.</li>
+                <li><strong>getData():</strong> Measures the current, power, and energy from the INA219 sensor and updates the LCD and Serial Monitor with the new readings.</li>
+            </ul>
+            
+            <h2>Classes:</h2>
+            <ul>
+                <li><strong>LiquidCrystal_I2C:</strong> Used for communicating with the LCD. Requires the I2C address of the LCD, number of columns, and number of rows.</li>
+                <li><strong>Adafruit_INA219:</strong> Used for interfacing with the INA219 sensor to measure voltage and current.</li>
+            </ul>
+            
+            <h2>Variables:</h2>
+            <ul>
+                <li><strong>lcd:</strong> Object for the LCD display.</li>
+                <li><strong>ina219:</strong> Object for the INA219 current/voltage sensor.</li>
+                <li><strong>current_mA:</strong> Current in milliamps measured by the sensor.</li>
+                <li><strong>power_mW:</strong> Power in milliwatts calculated from voltage and current.</li>
+                <li><strong>energy_Wh:</strong> Energy in watt-hours calculated over time.</li>
+                <li><strong>time_s:</strong> Time in seconds since the program started.</li>
+                <li><strong>voltage_V:</strong> Voltage in volts as measured by the sensor.</li>
+            </ul>
+            
+            <h2>Constants:</h2>
+            <p>No specific constants defined in this script beyond the initialization parameters for the LCD and INA219 sensor.</p>
+            
+            <h2>External Libraries:</h2>
+            <ul>
+                <li><strong>Wire.h:</strong> Allows for I2C communication.</li>
+                <li><strong>LiquidCrystal_I2C.h:</strong> Library for the LCD interface over I2C.</li>
+                <li><strong>Adafruit_INA219.h:</strong> Library specific to the INA219 sensor for current and voltage measurement.</li>
+            </ul></div>
+
         <!-- Additional sections can be added here -->
     </main>
 </body>
