@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Smart Recharging Platform for Drones and Ultracapacitors</title>
+</head>
+
+<body>
+    <header>
+        <h1>Smart Recharging Platform for Drones and Ultracapacitors</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Back to Main Page</a>
+    </nav>
+
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Welcome to the Smart Recharging Platform for Drones and Ultracapacitors project! This innovative system is designed to automate the battery swapping and charging process for drones. It integrates advanced sensor technology with machine learning to ensure efficient and reliable drone operation.</p>
+    </section>
+
+    <section>
+        <h2>Prerequisites</h2>
+        <h3>Hardware:</h3>
+        <ul>
+            <li>Arduino Board</li>
+            <li>2x IR Sensors</li>
+            <li>2x Piezo Electric Sensors</li>
+            <li>2x 20x4 LCD Display</li>
+            <li>Voltage Divider Circuit</li>
+            <li>INA219 Sensor</li>
+        </ul>
+        <h3>Software:</h3>
+        <ul>
+            <li>Arduino IDE</li>
+            <li>Python Environment (Recommend Anaconda or Jupyter Notebook or Google Colab)</li>
+            <li>Git (for version control)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Installation and Setup</h2>
+        <h3>Clone the Repository</h3>
+        <p>First, clone the repository to your local machine using:</p>
+        <code class="myCode">gh repo clone mauliksavalia/CS682</code>
+
+        <h3>Hardware Setup</h3>
+        <ol>
+            <li>Connect the 2 IR sensors to the Arduino in the arduino pin 4 & 5.</li>
+            <li>Connect the Piezo sensors to the same arduino in the arduino pin A0 and A1</li>
+            <li>Connect the INA219 sensor and 20x4 LCD to the Arduino board for measuring current.</li>
+            <li>Connect the voltage divider circuit and 20x4 LCD to the Arduino board.</li>
+            <li>Set up the 20x4 LCD display with the Arduino.</li>
+        </ol>
+
+        <h3>Software Setup</h3>
+        <ol>
+            <li>Install Arduino IDE from the official website and upload the respective .ino files to the Arduino board.</li>
+            <li>Install Anaconda or any Python environment that supports Jupyter Notebooks.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Dependencies for Machine Learning Module</h2>
+        <p>Ensure you have the following Python libraries installed:</p>
+        <ul>
+            <li>Pandas: for data manipulation and analysis.</li>
+            <li>NumPy: for numerical operations.</li>
+            <li>Matplotlib: for plotting graphs.</li>
+            <li>Scikit-Learn: for data preprocessing and machine learning.</li>
+            <li>TensorFlow Keras: for neural network models.</li>
+        </ul>
+        <p>You can install these libraries using pip:</p>
+        <code class="myCode">pip install pandas numpy matplotlib scikit-learn tensorflow</code>
+    </section>
+
+    <section>
+        <h2>Running the Project</h2>
+        <h3>Running Sensor Modules</h3>
+        <h4>IR & Piezo Electric Sensors Integration Setup:</h4>
+        <ol>
+            <li>Connect the IR and Piezo Electric sensors to the Arduino as required.</li>
+            <li>Upload the 2IRand2PiezoSensorsWithLCD.ino file to the Arduino.</li>
+            <li>Open the Serial Monitor to view the sensor readings.</li>
+        </ol>
+
+        <h4>Current Sensor Setup:</h4>
+        <ol>
+            <li>Connect the Current sensor to the Arduino as required.</li>
+            <li>Upload the Display_Power_T2.ino file to the Arduino.</li>
+            <li>Observe the sensor readings on the Serial Monitor or LCD display.</li>
+        </ol>
+
+        <h4>Voltage Sensors Setup:</h4>
+        <ol>
+            <li>Connect the Voltage sensors to the Arduino as required.</li>
+            <li>Upload the Display_T1.ino file to the Arduino.</li>
+            <li>Observe the sensor readings on the Serial Monitor or LCD display.</li>
+        </ol>
+
+        <h4>LCD Display:</h4>
+        <p>Ensure the LCD is connected properly to the Arduino.</p>
+
+        <h3>Running the Machine Learning Module</h3>
+        <ol>
+            <li>Open the Notebook: Navigate to CS682_Battery_Recharging_ML.ipynb and open it in your Jupyter environment, also upload synthetic_data_5.csv file to access the data.</li>
+            <li>Run the Code: Execute the cells sequentially, ensuring that each library loads successfully and the data paths are correctly set.</li>
+        </ol>
+
+        <p>The notebook will guide you through the following steps:</p>
+        <ul>
+            <li>Data Loading and Preprocessing</li>
+            <li>Data Normalization</li>
+            <li>Model Building and Training</li>
+            <li>Evaluation and Prediction</li>
+            <li>Result Visualization</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Visualizing Results</h2>
+        <p>The project includes scripts for visualizing sensor readings and machine learning predictions. Ensure matplotlib is installed and follow the instructions in the notebook to plot graphs.</p>
+    </section>
+
+    <section>
+        <h2>Troubleshooting</h2>
+        <p>If you encounter any issues:</p>
+        <ul>
+            <li>Check that all hardware connections are secure.</li>
+            <li>Ensure all software dependencies are correctly installed.</li>
+            <li>Refer to the Arduino and Python console logs for error messages.</li>
+        </ul>
+    </section>
+</body>
+
+</html>
