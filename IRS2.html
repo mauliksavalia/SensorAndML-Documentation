@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR Sensor 2 Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>2 IR Sensor Code Documentation</h1>
+    </header>
+
+    <nav>
+        <a href="IRSensor.html">Back to Main Page</a>
+    </nav>
+    
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>This document provides the setup and operational details for a system utilizing two infrared (IR) sensors to detect the presence of objects, specifically drones. It explains how the sensors are defined and configured within the system.</p>
+        </section>
+
+        <section>
+            <h2>Pin Definitions</h2>
+            <ul>
+                <li><strong>irSensor1 (int)</strong>: Pin number connected to the first IR sensor (4).</li>
+                <li><strong>irSensor2 (int)</strong>: Pin number connected to the second IR sensor (5).</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Setup()</h2>
+           <ul>
+            <li>Configures irSensor1 and irSensor2 as input pins.</li>
+            <li>Initializes the serial communication at a baud rate of 9600.</li>
+           </ul>
+        </section>
+        
+        <section>
+            <h2>Loop</h2>
+            <ul>
+                
+                <li>Reads the status of the IR sensors and stores them in sensor1Status and sensor2Status variables (both of type bool).</li>
+            <li>If both sensor1Status and sensor2Status are true (sensors are triggered), it prints "Drone Detected!" using serial communication.</li>
+            <li>If either sensor1Status or sensor2Status is false (no sensors triggered), it prints "No drone detected." using serial communication.</li>
+            <li>Delays the program execution for 200 milliseconds.</li>
+            </ul>
+               </section>
+    </main>
+</body>
+</html>

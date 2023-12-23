@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR and Piezo Electric Sensors Integration with LCD Code Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>IR and Piezo Electric Sensors Integration with LCD Code Documentation</h1>
+    </header>
+    
+    <nav>
+        <a href="IRPiezoIntegrated.html">Back to Main Page</a>
+    </nav>
+
+    <main>
+        <section>
+<h3>DESCRIPTION</h3>
+<p>This code is used to monitor the status of an infrared sensor and a piezo sensor. It uses a LiquidCrystal I2C display to provide visual feedback and outputs relevant messages via the Serial monitor. The code detects the presence of a drone by checking if both sensors are triggered simultaneously.</p>
+<h3>LCD DISPLAY SETUP</h3>
+<p>lcd: An instance of the LiquidCrystal_I2C class for controlling the LCD display. It is initialized with the I2C address of the LCD (0x27) and the LCD dimensions (16 columns x 2 rows).</p>
+<h3>SETUP FUNCTION</h3>
+<p>The setup function is called once when the microcontroller starts. It performs the following tasks:</p>
+<ul>
+    <li>Sets the pinMode of irSensorPin and piezoSensorPin to INPUT.</li>
+    <li>Initializes the LCD display.</li>
+    <li>Turns on the backlight of the LCD.</li>
+    <li>Begins communication with the Serial monitor at a baud rate of 9600</li>
+    <li>Prints "System Ready" on the first line of the LCD display.</li>
+</ul>
+<h3>LOOP FUNCTION</h3>
+<ul>
+    <li>Reads the status of the infrared sensor and stores it in the irStatus variable.</li>
+    <li>Reads the value of the piezo sensor and stores it in the piezoReading variable.</li>
+    <li>Determines the status of the piezo sensor based on the piezoThreshold. If the reading is above the threshold, piezoStatus is set to true.</li>
+    <li>Checks if both the infrared sensor and the piezo sensor are triggered simultaneously. If they are, it checks if this is the first time they are triggered since the last time they were not triggered. If so, it prints "Motion detected!" on the Serial monitor and "Drone Detected" on the second line of the LCD display.</li>
+    <li>If either the infrared sensor or the piezo sensor is not triggered, it checks if either of them was triggered in the previous loop iteration. If so, it prints "No Object Detected" on the Serial monitor and "No Drone Detected" on the second line of the LCD display.</li>
+<li>Updates the last status variables (lastIrStatus and lastPiezoStatus) with the current sensor statuses.</li>
+<li>Adds a delay of 300 milliseconds before starting the next loop iteration.</li>
+
+</ul>
+
+    </section>
+    </main>
+</body>
+</html>

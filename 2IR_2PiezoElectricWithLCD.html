@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 IR and 2 Piezo Electric Sensors Integration with LCD Code Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>2 IR and 2 Piezo Electric Sensors Integration with LCD Code Documentation</h1>
+    </header>
+    
+    <nav>
+        <a href="IRPiezoIntegrated.html">Back to Main Page</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Code Documentation</h2>
+            <h3>Pin Definitions</h3>
+            <ul>
+                <li>irSensorPin1: Pin 4 on the Arduino Mega 2560, used for the first IR sensor.</li>
+                <li>irSensorPin2: Pin 5 on the Arduino Mega 2560, used for the second IR sensor.</li>
+                <li>piezoSensorPin1: Pin A0 on the Arduino Mega 2560, used for the first piezo sensor.</li>
+                <li>piezoSensorPin2: Pin A1 on the Arduino Mega 2560, used for the second piezo sensor.</li>
+            </ul>
+            <h4>Sensor Thresholds</h4>
+            <p>piezoThreshold: Threshold value used to determine whether the piezo sensors are triggered or not.</p>
+            <h4>LCD Display Setup</h4>
+            <p>lcd: LiquidCrystal_I2C object with the address 0x27, representing the LCD display.<br>
+               LCD display has 16 columns and 2 rows.</p>
+            <h4>void setup()</h4>
+            <p>Configures the pin modes for all sensors and initializes the LCD display.<br>
+               Sets the cursor position on the LCD display to the top-left corner (0, 0).<br>
+               Prints "System Ready" on the LCD display.<br>
+               Starts serial communication at a baud rate of 9600.</p>
+            <h4>void loop()</h4>
+            <p>Continuously executes the following steps:<br>
+               Reads the digital values of both IR sensors and stores the status as boolean values.<br>
+               Reads the analog values of both piezo sensors.<br>
+               Determines the status of the piezo sensors based on the threshold value.<br>
+               Checks if all four sensors are triggered.<br>
+               If all four sensors are triggered, prints "Drone detected!" on the serial monitor and the LCD display.<br>
+               If not all four sensors are triggered, prints "No Object Detected" on the serial monitor and "No Drone Detected" on the LCD display.<br>
+               Waits for 300 milliseconds before repeating the loop.</p>
+        </section>
+    </main>
+</body>
+</html>

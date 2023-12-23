@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR and Piezo Electric Sensors Integration Code Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>IR and Piezo Electric Sensors Integration Code Documentation</h1>
+    </header>
+    
+    <nav>
+        <a href="IRPiezoIntegrated.html">Back to Main Page</a>
+    </nav>
+
+    <main>
+        <section>
+<h3>DESCRIPTION</h3>
+<p>This code is written for an Arduino to measure the distance and detect motion using an infrared (IR) sensor and a piezo sensor. The code sets up the pins in the Arduino and initializes the serial communication. It then enters the loop and reads the status of the IR sensor and the piezo sensor. If both sensors are triggered, it outputs a message indicating that motion is detected. Otherwise, it outputs a message indicating no motion.</p>
+<h3>VARIABLES</h3>
+<h4>distance - int</h4>
+<p>Description: The distance threshold for the IR sensor. The IR sensor is triggered if the reading is below this distance with
+    Initial value: 1</p>
+<h4>irSensorPin - int</h4>
+<ul>
+    <li>Description: The pin number for the IR sensor.</li>
+    
+</ul>
+<h4>piezoSensorPin - int</h4>
+<ul>
+    <li>Description: The pin number for the piezo sensor.</li>
+    
+</ul>
+<h4>piezoThreshold - int</h4>
+<ul>
+    <li>Description: The threshold value for the piezo sensor. The piezo sensor is triggered if the reading is above this threshold.</li>
+</ul>
+<h3>setup()</h3>
+<ul>
+    <li>Description: Initializes the Arduino by setting up the pins and starting the serial communication.</li>
+    
+</ul>
+<h3>loop()</h3>
+<ul>
+    <li>Description: The main loop of the code. Reads the status of the sensors and outputs appropriate messages based on the sensor readings.</li>
+</ul>
+    </section>
+    </main>
+</body>
+</html>

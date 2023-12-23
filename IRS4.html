@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR Sensor 4 Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>4 IR Sensor Code Documentation</h1>
+    </header>
+
+    <nav>
+        <a href="IRSensor.html">Back to Main Page</a>
+    </nav>
+    
+    <main>
+        <section>
+     <h2>IR Sensor Pins Documentation</h2>
+     <p>This code is used to read the values of four IR sensors and determine if there is an object detected by all four sensors simultaneously. The pins used for each IR sensor are defined as follows:</p>
+             <ul>
+                <li><strong>irSensor1</strong> is connected to pin 2</li>
+                <li><strong>irSensor2</strong> is connected to pin 3</li>
+                <li><strong>irSensor3</strong> is connected to pin 4</li>
+                <li><strong>irSensor4</strong> is connected to pin 5</li>
+              
+            </ul>
+            <p>A distance variable is defined as a float and set to a value of 1</p>
+
+            <h3>Setup</h3>
+            <p>In the setup() function, the pins for each IR sensor are set as input using the pinMode() function. The serial communication is also initialized with a baud rate of 9600 using Serial.begin().</p>
+    
+    <h3>LOOP</h3>
+    <p>In the loop() function, the code reads the values of each sensor using the digitalRead() function. The value is compared to the distance variable and stored in separate bool variables for each sensor:</p>
+    <ul>
+        <li><strong>sensor1State</strong> stores the state of <strong>irSensor1</strong></li>
+        <li><strong>sensor2State</strong> stores the state of <strong>irSensor2</strong></li>
+        <li><strong>sensor3State</strong> stores the state of <strong>irSensor3</strong></li>
+        <li><strong>sensor4State</strong> stores the state of <strong>irSensor4</strong></li>
+       
+      
+    </ul>
+    <p>If all four sensors are triggered simultaneously (i.e., all bool variables are true), the code prints "Object detected by all sensors!" to the serial monitor. Otherwise, it prints "No object detected."</p>
+    <p>A delay of 300 milliseconds is added using the delay() function before the loop repeats. This delay is necessary to avoid rapid and unnecessary sensor readings.</p>
+    </section>
+    </main>
+</body>
+</html>

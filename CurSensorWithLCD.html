@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Sensor with LCD Code Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Current Sensor with LCD Code Documentation</h1>
+    </header>
+    
+    <nav>
+        <a href="CurrentSensor.html">Back to Main Page</a>
+    </nav>
+
+    <main>
+        <section>
+<h3>DEPENDENCIES</h3>
+<ul>
+    
+    
+    <li>Wire.h</li>
+    <li>LiquidCrystal_I2C.h</li>
+    <li>Adafruit_INA219.h</li>
+
+
+
+</ul>
+<h3>GLOBAL VARIABLES</h3>
+<ul>
+    <li>lcd - an instance of the LiquidCrystal_I2C class used to control the LCD display.</li>
+    <li>ina219 - an instance of the Adafruit_INA219 class representing the INA219 sensor.</li>
+    <li>current_mA - a float variable to store the measured current in milliamperes.</li>
+    <li>power_mW - a float variable to store the calculated power in milliwatts.</li>
+    <li>energy_Wh - a float variable to store the calculated energy consumption in watt-hours.</li>
+    <li>voltage_V - a float variable to store the measured voltage in volts.</li>
+</ul>
+<h3>FUNCTIONS</h3>
+<ul>
+    <li><strong>void setup(void)</strong>
+        <ul>
+            <li>Initializes the I2C communication using Wire.begin().</li>
+            <li>Initializes the LCD display using lcd.init().</li>
+            <li>Turns on the backlight of the LCD using lcd.backlight().</li>
+            <li>Initializes the Serial communication using Serial.begin(9600).</li>
+            <li>Initializes the INA219 sensor using ina219.begin().</li>
+            <li>Prints a message to the Serial Monitor.</li>
+        </ul>
+    </li>
+    <li><strong>void loop(void)</strong>
+        <ul>
+            <li>Calls the getData() function to collect the measurements and update the LCD display.</li>
+            <li>Pauses the program execution for 2000 milliseconds using delay(2000).</li>
+        </ul>
+    </li>
+    <li><strong>void getData()</strong>
+        <ul>
+            <li>Calculates the elapsed time in seconds by dividing the value returned by millis() by 1000.</li>
+            <li>Retrieves the current measurement from the INA219 sensor using ina219.getCurrent_mA() and stores it in current_mA.</li>
+            <li>Calculates the power consumption by multiplying current_mA with the measured voltage (voltage_V).</li>
+            <li>Calculates the energy consumption in watt-hours by multiplying power_mW with the elapsed time (time_s), and then dividing the result by 3600.</li>
+            <li>Prints the current, power, and energy values to the Serial Monitor.</li>
+            <li>Updates the LCD display with the current, power, and energy values.</li>
+        </ul>
+    </li>
+</ul>
+    </section>
+    </main>
+</body>
+</html>

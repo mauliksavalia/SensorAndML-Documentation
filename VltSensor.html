@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltage Sensor Code Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Voltage Sensor Code Documentation</h1>
+    </header>
+    
+    <nav>
+        <a href="VoltageSensor.html">Back to Main Page</a>
+    </nav>
+
+    <main>
+        <section>
+
+<h3>SETUP</h3>
+
+            <ul>
+                <li>Connect the voltage source to pin A0 on the Arduino board.</li>
+                <li>Upload the code to the Arduino board.</li>
+            </ul>
+            <h3>PINS</h3>
+            <p>volDetPin - Holds the pin number to which the voltage source is connected (A0 in this case).</p>
+            <h3>CONSTANTS</h3>
+            <ul>
+                <li>shldredfactor - Holds the factor used to reduce the voltage value calculated.</li>
+                <li>vcc - Holds the reference voltage value</li>
+            </ul>
+            <h3>VARIABLES</h3>
+            <ul>
+                <li>vin - Holds the calculated input voltage value.</li>
+                <li>vout - Holds the voltage value obtained from the analog pin.</li>
+                <li>voltageDetVal - Holds the analog value read from the voltage detection pin</li>
+            </ul>
+            <h3>FUNCTIONS</h3>
+            <h4>loop()</h4>
+            <ul>
+                <li>Contains the main code that runs repeatedly.</li>
+                <li>Reads the analog value from volDetPin and assigns it to voltageDetVal.</li>
+                <li>Calculates vout by dividing voltageDetVal by 1024 and multiplying it by vcc</li>
+                <li>Calculates vin by multiplying vout by shldredfactor.</li>
+                <li>Prints the value of vin with a message indicating it is a voltage value.</li>
+                <li>Delays execution for 1000 milliseconds (1 second).</li>
+            </ul>
+    </section>
+    </main>
+</body>
+</html>

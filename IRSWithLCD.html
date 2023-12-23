@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR Sensor LCD Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>IR Sensor with LCD Code Documentation</h1>
+    </header>
+    
+    <nav>
+        <a href="IRSensor.html">Back to Main Page</a>
+    </nav>
+
+    <main>
+        <section>
+<h1>INTRODUCTION</h1>
+<p>This code controls a Liquid Crystal Display (LCD) using the I2C protocol. It also utilizes an IR sensor to detect the presence of an object and display corresponding messages on the LCD.</p>
+    <h3>DEPENDENCIES</h3>
+    <p><strong>LiquidCrystal_I2C</strong>: This library allows easy control of LCDs that use the I2C protocol.</p>
+    <h3>HARDWARE REQUIREMENTS</h3>
+    
+<ul>
+    <li>Arduino board</li>
+    <li>LCD display with I2C interface</li>
+    <li>IR sensor</li>
+</ul>
+<h3>CIRCUIT SETUP</h3>
+<ol>
+    <li>Connect the IR sensor to pin 4 of the Arduino board.</li>
+    <li>Connect the I2C pins (SDA, SCL) of the LCD to the corresponding pins on the Arduino board.</li>
+    <li>Connect the VCC and GND pins of the LCD to the 5V and GND pins on the Arduino board.</li>
+</ol>
+<h3>CODE EXPLANATION</h3>
+<code class="myCode">const int irSensor = 4;</code>
+<p>This line declares a constant integer variable irSensor and assigns pin 4 as its value. This pin will be used to connect the IR sensor.</p>
+<code class="myCode">LiquidCrystal_I2C lcd(0x27, 16, 2);</code>
+<p>This line creates an instance of the LiquidCrystal_I2C object named lcd. It initializes the object with the I2C address 0x27 and the LCD dimensions (16 columns and 2 rows)</p>
+
+<h3>SETUP FUNCTION</h3>
+<code class="myCode">void setup() {
+    pinMode(irSensor, INPUT);
+    lcd.init();
+    lcd.backlight();
+    Serial.begin(9600);
+  }</code>
+<p>This function is called once when the Arduino starts. It sets the irSensor pin as an input, initializes the LCD, turns on the LCD backlight, and starts the serial communication at a baud rate of 9600.</p>
+
+<h3>LOOP FUNCTION</h3>
+<code class="myCode">void loop() {
+    int irValue = digitalRead(irSensor);
+    
+    if (irValue < 1) {
+      Serial.println("Object Detected");
+      lcd.setCursor(0, 1);
+      lcd.print("Drone Detected");
+    } else {
+      lcd.setCursor(0, 1);
+      lcd.print("No Drone Detected!");
+      Serial.println("No Object Detected");
+    }
+    
+    delay(300);
+  }</code>
+  <p>This function is called repeatedly after the setup function. It reads the value of the irSensor pin using the digitalRead function and stores it in the irValue variable.</p>
+<p>If irValue is less than 1 (indicating the sensor is triggered), it prints "Object Detected" to the serial monitor and displays "Drone Detected" on the LCD. If irValue is not less than 1 (indicating no object is detected), it prints "No Object Detected" to the serial monitor and displays "No Drone Detected!" on the LCD.</p>
+<p>A delay of 300 milliseconds is added to each iteration of the loop to prevent rapid execution and provide a delay between readings.</p>
+<h2>CONCLUSION</h2>
+
+<p>This code allows an Arduino board to interface with an LCD display and an IR sensor. It reads the sensor's value, detects the presence of a drone, and displays corresponding messages on the LCD. It also provides feedback through the serial monitor.</p>
+
+</section>
+    </main>
+</body>
+</html>

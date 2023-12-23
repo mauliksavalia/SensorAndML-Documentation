@@ -1,0 +1,86 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffff; /* Maintained white background */
+    color: #333333; /* Retained dark gray text color for readability */
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #f8f9fa; /* Light gray background */
+    color: #333333; /* Dark text for contrast */
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+nav {
+    background: #e9ecef; /* Slightly darker gray for the nav background */
+    padding: 10px;
+    margin-bottom: 20px; /* Space out the nav from the main content */
+}
+
+nav a {
+    color: #007bff; /* Bootstrap primary color for links */
+    text-decoration: none;
+    padding: 8px 15px;
+    display: inline-block;
+    transition: color 0.3s; /* Smooth transition for hover effects */
+}
+
+nav a:hover {
+    color: #0056b3; /* Darker blue on hover for better interaction feedback */
+}
+
+/* Code Styling */
+.myCode {
+    background-color: #282C34; /* Dark background for code blocks */
+    color: #ABB2BF; /* Light gray text for high contrast */
+    font-family: 'Courier New', monospace; /* Monospaced font for code */
+    padding: 12px; /* Increased padding for better spacing */
+    border-radius: 5px; /* Slightly increased border-radius for modern look */
+    overflow-x: auto; /* Retain horizontal scrolling if code is wide */
+    display: block; /* Ensure it's a block element to respect margins */
+    margin: 10px 0; /* Vertical margin for separation from other elements */
+    white-space: pre-wrap; /* Ensures formatting and spacing is maintained */
+    word-wrap: break-word; /* Ensures long words or code strings don't overflow */
+    line-height: 1.5; /* Increased line-height for better readability in code blocks */
+}
+
+/* Additional styling for headings and paragraphs to enhance readability */
+h1, h2, h3, h4, h5, h6 {
+    color: #005792; /* A blue shade for headings for a professional tech feel */
+    margin-top: 20px; /* Space out the headings from preceding elements */
+    margin-bottom: 10px; /* Space after headings before text */
+}
+
+p {
+    margin-bottom: 10px; /* Space out paragraphs for better readability */
+}
+
+/* Enhanced list styling */
+ul, ol {
+    padding-left: 20px; /* Indent lists for clearer structure */
+    margin-bottom: 10px; /* Space after lists */
+}
+
+/* Style for the section for better visual hierarchy */
+section {
+    margin-bottom: 20px; /* Adds bottom margin for separation between sections */
+    padding-bottom: 10px; /* Padding at the bottom of each section */
+}
+
+/* Enhancements for responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    header, footer {
+        padding: 10px 0; /* Less padding on smaller screens */
+    }
+}

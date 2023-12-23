@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Peizo Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>2 Peizo Pressure Sensors Code Documentation</h1>
+    </header>
+
+    <nav>
+        <a href="PiezoSensor.html">Back to Main Page</a>
+    </nav>
+    
+    <main>
+        <section>
+<h3>DESCRIPTION</h3>
+<p>This code is written in Arduino and is used to detect motion using two piezo sensors. If both sensors detect motion above a certain threshold, it will print "Motion detected!" to the serial monitor.</p>
+   <h3>VARIABLES</h3>
+   <ul>
+    <li>piezoPin1 : An integer constant representing the pin number for the first piezo sensor (A0).</li>
+    <li>piezoPin2 : An integer constant representing the pin number for the second piezo sensor (A1).</li>
+    <li>threshold : An integer constant representing the threshold above which motion is considered as detected.</li>
+   </ul>
+<h3>FUNCTIONS</h3>
+<ul>
+    <li>setup() : This function runs only once when the Arduino board is powered on or reset. It initializes the serial communication with a baud rate of 9600 and sets the mode of the two piezo sensor pins as INPUT.</li>
+<li>loop() : This function runs repeatedly after the setup() function has finished. It reads the analog values from the two piezo sensors and stores them in sensor1Value and sensor2Value variables respectively. It then checks if the values are above the threshold using the boolean variables sensor1Triggered and sensor2Triggered. If both sensors are triggered, it prints "Motion detected!" to the serial monitor.</li>
+</ul>
+
+
+</section>
+    </main>
+</body>
+</html>

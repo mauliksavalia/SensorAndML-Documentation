@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Peizo Elecric Sensors Code Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1> 4 Piezo Pressure Sensor Code Documentation</h1>
+    </header>
+
+    <nav>
+        <a href="PiezoSensor.html">Back to Main Page</a>
+    </nav>
+    
+    <main>
+        <section>
+            <p>This code defines the pins for four piezo sensors and sets a threshold value for triggering them.</p>
+
+<h3>CODE</h3>
+<code class="myCode">const int piezoPin1 = A0;
+    const int piezoPin2 = A1; <br>
+    const int piezoPin3 = A2; <br>
+    const int piezoPin4 = A3; <br>
+    
+    const int threshold = 100; <br>
+    <br>
+    void setup() {<br>
+      Serial.begin(9600);<br>
+      
+      // Set all pins as input <br>
+      pinMode(piezoPin1, INPUT);<br>
+      pinMode(piezoPin2, INPUT);<br>
+      pinMode(piezoPin3, INPUT);<br>
+      pinMode(piezoPin4, INPUT); <br> 
+    }<br>
+    <br>
+    void loop() {<br>
+    
+      // Read each sensor<br>
+      int sensor1 = analogRead(piezoPin1);<br>
+      int sensor2 = analogRead(piezoPin2); <br>
+      int sensor3 = analogRead(piezoPin3);<br>
+      int sensor4 = analogRead(piezoPin4);<br>
+    
+      // Check threshold for each<br>
+      bool sensor1Triggered = (sensor1 > threshold);<br>
+      bool sensor2Triggered = (sensor2 > threshold);<br>
+      bool sensor3Triggered = (sensor3 > threshold);<br>
+      bool sensor4Triggered = (sensor4 > threshold);<br>
+      <br>
+      // Check if ALL triggered<br>
+      if(sensor1Triggered && sensor2Triggered && sensor3Triggered && sensor4Triggered) {<br>
+        Serial.println("Motion detected!");<br>
+      }<br>
+      else {<br>
+        Serial.println("No motion.");<br>
+      }<br>
+      
+      delay(500);<br>
+    }</code>
+<h3>DEPENDENCIES</h3>
+<p>This code has the following dependencies:</p>
+<ul>
+    <li>Arduino board</li>
+    <li>Piezo sensors connected to analog pins A0, A1, A2, and A3</li>
+</ul>
+<h3>DESCRIPTION</h3>
+<p>The code initializes the piezo sensor pins and the threshold value for triggering motion detection. In the setup() function, all pins are set as inputs. In the loop() function, the code reads analog values from each sensor using the analogRead() function. Then, it checks if the value of each sensor is greater than the threshold, and stores the result in corresponding boolean variables (sensor1Triggered, sensor2Triggered, sensor3Triggered, sensor4Triggered). Finally, it checks if all the sensors are triggered and prints "Motion detected!" if true, and "No motion." otherwise. The code then delays for 500 milliseconds before repeating the process again.</p>
+<h3>USAGE</h3>
+<ol>
+    <li>Connect the piezo sensors to the analog pins A0, A1, A2, and A3 on the Arduino board.</li>
+    <li>Upload the code to the Arduino board.</li>
+
+    <li>Open the serial monitor at a baud rate of 9600.</li>
+    <li>Observe the output on the serial monitor to see if motion is detected or not.</li>
+
+</ol>
+
+
+
+</section>
+    </main>
+</body>
+</html>

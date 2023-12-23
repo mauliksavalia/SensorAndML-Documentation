@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR Sensor LCD Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>IR Sensor Code Documentation</h1>
+    </header>
+
+    <nav>
+        <a href="IRSensor.html">Back to Main Page</a>
+    </nav>
+    
+    <main>
+        <section>
+<p>The following code is written in Arduino and it uses an IR sensor to detect the presence of a drone. It prints a message to the serial monitor depending on whether a drone is detected or not.</p>
+    <h2>Variables</h2>
+    <p>irSensor1: This constant variable is assigned the value 4, which represents the pin number to which the IR sensor is connected.</p>
+<p>x: This integer variable is used to store the digital value read from the IR sensor.</p>
+<h3>SETUP</h3>
+<p>The setup() function is called once when the Arduino is powered on or reset. It performs the following tasks:</p>
+<ul>
+    <li>Sets the pinMode of irSensor1 as INPUT, indicating that it is a digital input pin.</li>
+    <li>Initializes the Serial communication by calling the begin() function with a baud rate of 9600</li>
+</ul>
+<h3>Loop</h3>
+<p>The loop() function is called repeatedly as long as the Arduino is powered on. It performs the following tasks:</p>
+<ul>
+    <li>Reads the digital value from irSensor1 and stores it in the variable x using the digitalRead() function.</li>
+    <li>Checks if x is less than 1. If true, it prints "Drone Detected!" to the serial monitor using the println() function of the Serial object.</li>
+    <li>If x is not less than 1, it prints "Not in a Range!" to the serial monitor.</li>
+    <li>Adds a delay of 200 milliseconds before the next iteration of the loop is executed using the delay() function.</li>
+</ul>
+
+
+</section>
+    </main>
+</body>
+</html>

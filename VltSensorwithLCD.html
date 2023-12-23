@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltage Sensor Code Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Voltage Sensor with LCD Code Documentation</h1>
+    </header>
+
+    <nav>
+        <a href="VoltageSensor.html">Back to Main Page</a>
+    </nav>
+    
+    <main>
+        <section>
+<h3>DEPENDENCIES</h3>
+<p>The code utilizes the LiquidCrystal_I2C library to control an LCD screen and display the measured voltage. It reads an analog voltage value from a voltage detection pin, calculates the corresponding voltage, and displays it on the LCD screen and serial monitor.</p>
+<h3>PIN CONFIGURATION</h3>
+<ul>
+    <li>volDetPin: Analog pin connected to the voltage detection sensor.</li>
+    <li>0x27: I2C address of the LCD module.</li>
+    <li>lcd: Object representing the LCD display.</li>
+</ul>
+
+<h3>GLOBAL VARIABLES</h3>
+<ul>
+    <li>vin: Variable to store the calculated input voltage.</li>
+    <li>vout: Variable to store the calculated output voltage.</li>
+    <li>voltageDetVal: Variable to store the measured voltage detection value.</li>
+    <li>shldredfactor: Shield reduction factor used in the voltage calculation.</li>
+    <li>vcc: Supply voltage value.</li>
+</ul>
+
+<h3>FUNCTIONS</h3>
+<ul>
+    <li><strong>setup()</strong>
+        <ul>
+            <li>Initializes the LCD display using lcd.init().</li>
+            <li>Enables the LCD backlight using lcd.backlight().</li>
+            <li>Prints the "Voltage:" message on the LCD screen.</li>
+            <li>Starts the serial communication at a baud rate of 9600 using Serial.begin().</li>
+        </ul>
+    </li>
+    <li><strong>loop()</strong>
+        <ul>
+            <li>Reads the analog value from volDetPin using analogRead().</li>
+            <li>Calculates the output voltage (vout) by dividing the analog value by 1024 and multiplying it with the supply voltage (vcc).</li>
+            <li>Calculates the input voltage (vin) by multiplying the output voltage (vout) with the shield reduction factor (shldredfactor).</li>
+            <li>Prints the calculated input voltage on the serial monitor using Serial.print() and Serial.println().</li>
+            <li>Sets the cursor on the LCD display to the second line using lcd.setCursor().</li>
+            <li>Prints the calculated input voltage on the LCD screen using lcd.print().</li>
+            <li>Adds a delay of 1000 milliseconds (1 second) using delay().</li>
+        </ul>
+    </li>
+</ul>
+<h4>EXAMPLE USAGE </h4>
+<ol>
+    <li>Connect the voltage detection sensor to the analog pin defined as volDetPin.</li>
+    <li>Connect the LCD module to the I2C interface with the specified address (0x27).</li>
+    <li>Open the serial monitor at a baud rate of 9600 to view the calculated input voltage.</li>
+    <li>The LCD screen will display the "Voltage:" message and the calculated input voltage.</li>
+</ol>
+
+
+</section>
+    </main>
+</body>
+</html>

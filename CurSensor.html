@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCUMENTATION FOR ARDUINO CODE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Current Sensor Code Documentation</h1>
+    </header>
+    
+    <nav>
+        <a href="CurrentSensor.html">Back to Main Page</a>
+    </nav>
+    
+    <main>
+        <section>
+<h3>DEPENDENCIES</h3>
+<p>This code measures voltage and current using the Adafruit INA219 library. It prints the current, power, and energy values to the Serial Monitor</p>
+<h3>Global Variables</h3>
+<ul>
+    <li>Adafruit_INA219 ina219: An object of the Adafruit_INA219 class to handle the INA219 chip.</li>
+    <li>float current_mA: A floating-point variable to store the current measurement in milliamperes.</li>
+    <li>float power_mW: A floating-point variable to store the power measurement in milliwatts.</li>
+    <li>float energy_Wh: A floating-point variable to store the energy measurement in watt-hours.</li>
+    <li>long time_s: A long variable to store the time in seconds.</li>
+</ul>
+
+<h3>Function Definitions</h3>
+<ul>
+    <li><strong>void setup(void)</strong>
+        <ul>
+            <li>Initializes the Serial communication at a baud rate of 9600.</li>
+            <li>Initializes the INA219 sensor using the begin function.</li>
+            <li>Prints a message to indicate that voltage and current measurement is being done.</li>
+        </ul>
+    </li>
+    <li><strong>void loop(void)</strong>
+        <ul>
+            <li>Calls the getData() function.</li>
+            <li>Delays for 2000 milliseconds (2 seconds) before repeating.</li>
+        </ul>
+    </li>
+    <li><strong>void getData()</strong>
+        <ul>
+            <li>Takes measurements for current, power, and energy.</li>
+            <li>Converts the millisecond timestamp to seconds and stores it in the time_s variable.</li>
+            <li>Measures the current using the getCurrent_mA function of the INA219 object and stores it in the current_mA variable.</li>
+            <li>Calculates power in milliwatts by multiplying current with voltage (not defined in the code).</li>
+            <li>Calculates energy in watt-hours by dividing power by 3600 and multiplying it with time in seconds.</li>
+            <li>Prints the current, power, and energy values to the Serial Monitor.</li>
+        </ul>
+    </li>
+</ul>
+
+</section>
+    </main>
+</body>
+</html>

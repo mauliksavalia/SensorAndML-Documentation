@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piezo Pressure Sensor with LCD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Piezo Pressure Sensor with LCD Code Documentation</h1>
+    </header>
+    
+    <nav>
+        <a href="PiezoSensor.html">Back to Main Page</a>
+    </nav>
+    
+    <main>
+        <section>
+      <h3>Code Overview</h3>
+      <p>This code demonstrates the use of a piezo sensor to detect pressure. If pressure is detected above a certain threshold, it will display a message on an LCD screen and send a message through the Serial monitor. If no pressure is detected, it will display a different message on the LCD screen.</p>
+
+      <h3>Required Libraries</h3>
+      <p>LiquidCrystal_I2C.h - This library allows communication with the LCD screen using the I2C protocol. If you haven't already, make sure to download and install this library.</p>
+<h3>Global Variables</h3>
+<ul><li>lcd - An object of the LiquidCrystal_I2C class, used to interact with the LCD.</li>
+<li>sensorPin - The analog pin connected to the piezo sensor.</li>
+<li>threshold - The threshold value used to detect pressure.</li></ul>
+
+
+<h3>setup() Function</h3>
+<ol>
+<li>Initialize the Serial communication with a baud rate of 9600.</li>
+<li>Set the sensorPin as an INPUT pin.</li>
+<li>Initialize the LCD screen using the init() function.</li>
+<li>Enable the backlight of the LCD screen</li>
+<li>Print the string "Piezo Sensor:" on the first line of the LCD screen.</li>
+
+
+</ol>
+<h3>loop() Function</h3>
+<ol>
+<li>Read the analog voltage from the sensorPin and store it in the variable sensorValue.</li>
+<li>Check if the value of sensorValue is greater than the threshold.
+    <ul>
+
+
+
+        <li>Print the string "Pressure detected!" on the Serial monitor.</li>
+        <li>Enter a while loop, which will run as long as the analog voltage from the sensorPin is above the threshold.</li>
+        <li>Inside the while loop, set the cursor of the LCD screen to the start of the second line.</li>
+        <li>Print the string "Drone Detected!" on the second line of the LCD screen.</li>
+    </ul>
+</li>
+
+
+<li>Add a small delay of 200 milliseconds.</li>
+</ol>
+<h3>Additional Notes</h3>
+<p>This code assumes the LCD screen is connected using the I2C protocol at address 0x27, with 16 columns and 2 rows. Adjust the parameters in the lcd object initialization if your LCD screen has different specifications.</p>
+    </section>
+    </main>
+</body>
+</html>

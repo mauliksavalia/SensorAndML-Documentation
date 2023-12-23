@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCUMENTATION FOR ARDUINO CODE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Machine Learning Code Documentation</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Back to Main Page</a>
+    </nav>
+    
+    <main>
+        <section>
+            <h2>Dependencies</h2>
+            <p>This code requires the following dependencies:</p>
+            <ul>
+                <li><code>pandas</code> (imported as pd)</li>
+                <li><code>numpy</code> (imported as np)</li>
+                <li><code>matplotlib.pyplot</code> (imported as plt)</li>
+                <li><code>train_test_split</code> from <code>sklearn.model_selection</code></li>
+                <li><code>MinMaxScaler</code> from <code>sklearn.preprocessing</code></li>
+                <li><code>Sequential</code> from <code>tensorflow.keras.models</code></li>
+                <li><code>LSTM</code> from <code>tensorflow.keras.layers</code></li>
+                <li><code>Dense</code> from <code>tensorflow.keras.layers</code></li>
+            </ul>
+        </section>
+
+        <section id="load-data">
+            <h2>Load Data</h2>
+            <p>Loads battery health data from a CSV file using the <code>pd.read_csv()</code> function. Specify the path to the CSV file in the <code>file_path</code> variable.</p>
+        </section>
+
+        <section id="preprocessing">
+            <h2>Preprocessing</h2>
+            <p>Define input features (X) and target variable (y) from the loaded data. Normalize the data using Min-Max scaling to ensure features are in the range [0, 1].</p>
+        </section>
+
+        <section id="train-test-split">
+            <h2>Train-Test Split</h2>
+            <p>Split data into training and testing sets using the <code>train_test_split()</code> function. Set the test size to 20% and random state to 42.</p>
+        </section>
+
+        <section id="reshape-data">
+            <h2>Reshape Data</h2>
+            <p>Reshape data to fit the LSTM model's input shape: (samples, time steps, features). Time steps are typically set to 1.</p>
+        </section>
+
+        <section id="build-lstm-model">
+            <h2>Build LSTM Model</h2>
+            <p>Construct an LSTM model with 50 units followed by a Dense layer with 1 unit. Set the output layer's activation function to 'linear'.</p>
+        </section>
+
+        <section id="compile-model">
+            <h2>Compile Model</h2>
+            <p>Compile the model using 'adam' as the optimizer and 'mean_squared_error' as the loss function.</p>
+        </section>
+
+        <section id="train-model">
+            <h2>Train Model</h2>
+            <p>Train the model with specified epochs and batch size, using the training data and also provide the validation data.</p>
+        </section>
+
+        <section id="evaluate-model">
+            <h2>Evaluate Model</h2>
+            <p>Evaluate the model's performance using the testing data and store the loss value.</p>
+        </section>
+
+        <section id="make-predictions">
+            <h2>Make Predictions</h2>
+            <p>Use the model to make predictions on the testing data and store the results.</p>
+        </section>
+
+        <section id="inverse-transform">
+            <h2>Inverse Transform</h2>
+            <p>Inverse transform the predictions and actual values to convert them back to the original scale.</p>
+        </section>
+
+        <section id="plot-results">
+            <h2>Plot Results</h2>
+            <p>The results are plotted using matplotlib.pyplot. Two plots are created:</p>
+            <ol>
+                <li>Scatter Plot: A scatter plot comparing the predicted SOH values (predictions_inv) and the true SOH values (y_test_inv) is created. The data points are marked with different markers to distinguish between the predicted and true values. The x-axis represents the data points, and the y-axis represents the SOH values.</li>
+           <li>Line Plot: A line plot showing the true SOH values (y_test_inv) and the predicted SOH values (predictions_inv) is created. The x-axis represents the data points, and the y-axis represents the SOH values. The x-axis limits are adjusted for better visualization.</li>
+            </ol>
+     
+
+</section>
+    </main>
+</body>
+</html>

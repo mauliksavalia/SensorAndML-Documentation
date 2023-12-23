@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peizo Pressure Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Piezo Pressure Sensor Code Documentation</h1>
+    </header>
+
+    <nav>
+        <a href="PiezoSensor.html">Back to Main Page</a>
+    </nav>
+    
+    <main>
+        <section>
+            <p>This code is used to detect pressure applied to a piezo sensor connected to an Arduino board. If the pressure exceeds a certain threshold, a message will be printed to the serial monitor.</p>
+<h3>PREREQUISITES</h3>
+<p>To use this code, you will need the following</p>
+<ul>
+    <li>Arduino board</li>
+    <li>Piezo sensor</li>
+    <li>Arduino IDE</li>
+</ul>
+<h3>CIRCUIT</h3>
+<p>Connect the piezo sensor to the Arduino board as follows:</p>
+<ul>
+    <li>Connect the positive (+) pin of the piezo sensor to the A0 pin on the Arduino board.</li>
+    <li>Connect the negative (-) pin of the piezo sensor to the ground (GND) pin on the Arduino board.</li>
+</ul>
+<h3>CODE</h3>
+<code class="myCode">const int sensorPin = A0; // Pin connected to piezo sensor <br>
+    const int threshold = 10; // Threshold value to detect press <br>
+
+    void setup() { <br>
+      Serial.begin(9600); // Initialize serial <br>
+      pinMode(sensorPin, INPUT); // Set pin as input <br>
+    } <br>
+    <br>
+    void loop() { <br>
+      int sensorValue = analogRead(sensorPin); // Read analog voltage <br>
+      // Check if pressure is applied <br>
+      if (sensorValue > threshold) { <br>
+        Serial.println("Pressure detected!"); <br>
+      } <br>
+      <br>
+      delay(10); // Small delay <br>
+    }</code>
+
+<h3>USAGE</h3>
+<ol>
+    <li>Connect the Arduino board to your computer using a USB cable.</li>
+    <li>Open the Arduino IDE.</li>
+    <li>Copy the code into a new sketch.</li>
+    <li>Upload the sketch to the Arduino board.</li>
+    <li>Open the serial monitor.</li>
+    <li>Apply pressure to the piezo sensor</li>
+    <li>If the pressure exceeds the threshold, you should see the message "Pressure detected!" printed to the serial monitor.</li>
+</ol>
+
+</section>
+    </main>
+</body>
+</html>
